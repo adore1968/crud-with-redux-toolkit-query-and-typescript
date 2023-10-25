@@ -1,5 +1,5 @@
 "use client";
-import showToast from "@/libs/ShowToast";
+import showAlert from "@/libs/showAlert";
 import {
   handleTaskChange,
   resetStates,
@@ -26,10 +26,10 @@ function TasksForm() {
     e.preventDefault();
     if (!currentId) {
       await createTask(task);
-      showToast("Task created successfully!", "success");
+      showAlert("Task created successfully!", "success");
     } else {
       await updateTask(task);
-      showToast("Task updated successfully!", "success");
+      showAlert("Task updated successfully!", "success");
     }
     dispatch(resetStates());
   };

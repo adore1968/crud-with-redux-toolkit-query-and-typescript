@@ -1,5 +1,5 @@
 "use client";
-import showToast from "@/libs/ShowToast";
+import showAlert from "@/libs/showAlert";
 import { setUpdateStates } from "@/redux/features/tasks/tasksSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import {
@@ -21,7 +21,7 @@ function TaskCard({ task, index }: Props) {
 
   const handleDelete = async () => {
     await deleteTask(task.id);
-    showToast("Task deleted successfully!", "error");
+    showAlert("Task deleted successfully!", "error");
   };
 
   const handleUpdate = async () => {
